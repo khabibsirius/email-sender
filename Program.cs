@@ -39,16 +39,16 @@ namespace EmailSenderApp
             MimeMessage email = new MimeMessage();
 
             string
-                your_name = "hacker2319",
-                your_email = "trashedsmile.you@gmail.com",
+                your_name = "yourname",
+                your_email = "youremail",
                 recipient_name = "myself",
-                recipient_email = "trashedsmile.you@gmail.com",
+                recipient_email = "youremail",
                 subject = "error happend",
                 smtp_address = "smtp.gmail.com",
-                auth_username = "trashedsmile.you@gmail.com",
-                auth_password = "tgvpgpdbuqtdbdvc";
+                auth_username = "youremail",
+                auth_password = "yourpassword";
 
-            int smtp_port = 587;
+            int smtp_port = port;
             bool use_ssl = false;
 
             email.From.Add(new MailboxAddress(your_name, your_email));
@@ -63,7 +63,7 @@ namespace EmailSenderApp
             {
                 HtmlBody = message,
             };
-            builder.Attachments.Add(@"C:\Users\trash\OneDrive\Desktop\Untitled.png");
+            builder.Attachments.Add(@"path");
 
             email.Body = builder.ToMessageBody();
 
